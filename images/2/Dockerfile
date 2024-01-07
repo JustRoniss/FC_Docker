@@ -8,4 +8,3 @@ from nginx:latest
 
 WORKDIR /app
 
-RUN touch flinstondare.txt && echo "Dare dare" >> flinstondare.txt
