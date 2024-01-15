@@ -1,0 +1,26 @@
+bridge: 
+    É o tipo de rede default do docker(quando não especificamos o tipo de rede, o tipo bridge será utilizado). 
+    Normalmente utilizamos redes do tipo bridge quando queremos comunicar um container com outro container.
+
+host: 
+    Mescla a network do docker com a network do host do docker. 
+    Ou seja, imaginamos um cenário em que a minha máquina local é o host do docker,(aonde estou rodando o docker), e 
+    que estou rodando uma aplicação java spring boot na minha máquina, na porta 80
+    Então quando crio uma network do tipo host e subo meu container nessa network, 
+    acontece que o container que está rodando irá conseguir enxergar a aplicação spring boot que está rodando na minha máquina na porta 80.
+    Além disso, o caminho inverso também é verdeiro: No caso de ter uma aplicação rodando dentro do container docker, minha máquina local consegue acessar diretamente tal app.
+
+overlay: 
+    Não é um formato muito comum.
+    Utilizado quando temos vários 'dockers' em computadores diferentes, 
+    e precisamos fazer com que esses caras se comuniquem como se estivessem na mesma rede.
+    Um caso de uso é o docker swarm por exemplo.
+    Para que um container consiga falar com outro em máquinas diferentes, eles precisam estar em overlay networks
+
+maclan:
+    Toda maquina tem um mac address, então conseguimos setar um mac address num container para parecer que é um dispositivo plugado em sua rede.
+    Não é muito utilizado
+
+none: 
+    Tipo de rede nenhum, 
+    é quando queremos que o container não tenha nenhuma rede e rode de forma completamente isolada
