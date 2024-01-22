@@ -27,7 +27,9 @@ RUN rm -rf /var/www/html
 #para dentro da pasta . do stage atual(que no caso é a pasta declarada no WORKDIR do stage 2)
 COPY --from=builder /var/www/laravel .
 
+RUN ln -s public html
 RUN chown -R www-data:www-data /var/www
+
 
 EXPOSE 9000
 
